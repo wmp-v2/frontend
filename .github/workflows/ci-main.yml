@@ -1,0 +1,10 @@
+name: CI/CD Main - Frontend Service
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  cicd:
+    uses: wmp-v2/github-actions=reusable-workflows/.github/workflows/cicd-m.yml@main

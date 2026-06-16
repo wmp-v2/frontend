@@ -1,0 +1,21 @@
+name: CI/CD Main - Frontend Service
+on:
+  push:
+   branches-ignore:
+     - main
+jobs:
+  docker_build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - run: env
+      - name: Build image
+        run: make docker-build image_tag=${GITHUB_SHA}
+
+  test:
+    runs-on: self-hosted
+    needs: docker_build
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run Tests
+        run:  echo "Running Test...."
