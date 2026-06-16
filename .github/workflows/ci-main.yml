@@ -7,4 +7,4 @@ on:
 
 jobs:
   cicd:
-    uses: wmp-v2/github-actions=reusable-workflows/.github/workflows/cicd-m.yml@main
+    uses: wmp-v2/github-actions-reusable-workflows/.github/workflows/cicd-m.yml@main
